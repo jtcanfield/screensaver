@@ -5,6 +5,7 @@ import java.applet.Applet;
 import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Event;
 import java.awt.MouseInfo;
 import java.awt.Rectangle;
 import java.util.Random;
@@ -71,7 +72,7 @@ public void paint(Graphics g){
 	
 	
 	int i1 = r.nextInt(8);
-	g.setColor(colors[i1]);
+	g.setColor(Color.red);
 	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
 	g.setColor(colors[i1]);
 	g.fillRect(rect2.x,rect2.y,rect2.width,rect2.height);
@@ -88,7 +89,7 @@ public class refresh extends Thread{
 		myapplet.repaint();
 		try {
 			//sleep(200);
-			sleep(10);
+			sleep(15);
 				//int num1;		num1 = (int) (Math.random() * 10);
 				//int num11;		num11 = (int) (Math.random() * -10);
 				//int num2;		num2 = (int) (Math.random() * 10);

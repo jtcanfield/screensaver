@@ -79,7 +79,7 @@ public class Applet1 extends Applet {
 }	
 		public class refresh extends Thread{
 			public Applet1 myapplet;
-			public void run(){
+			/*public void run(){
 				while(true){
 				myapplet.repaint();
 				try {
@@ -88,7 +88,9 @@ public class Applet1 extends Applet {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-}}}}
+}}*/
+			}
+		}
 /*boolean doTheyIntersect = r1.intersects(r2);
 if (doTheyIntersect == true){
 	g.drawString("yes", 0, 1000);}*/
