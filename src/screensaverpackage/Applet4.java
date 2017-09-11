@@ -10,7 +10,7 @@ import java.awt.MouseInfo;
 import java.awt.Rectangle;
 import java.util.Random;
 
-public class Applet4 extends Applet1 {
+public class Applet4 extends Applet {
 	/*public Color color1 = Color.red;
 	public Color color2 = Color.blue;
 	public Color color3 = Color.black;
@@ -34,16 +34,10 @@ public class Applet4 extends Applet1 {
 		rect1.height = 100;
 		
 		rect2 = new Rectangle();
-		rect2.x = 10;
+		rect2.x = 0;
 		rect2.y = 0;
 		rect2.width = 10;
 		rect2.height = 10;
-		
-		rect3 = new Rectangle();
-		rect3.x = 0;
-		rect3.y = 0;
-		rect3.width = 10;
-		rect3.height = 10;
 		
 		refresh thread= new refresh();	
 		thread.myapplet = this;
@@ -76,28 +70,18 @@ public void paint(Graphics g){
 	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
 	g.setColor(colors[i1]);
 	g.fillRect(rect2.x,rect2.y,rect2.width,rect2.height);
-	g.setColor(Color.black);
-	g.fillRect(rect3.x,rect3.y,rect3.width,rect3.height);
 }
 public class refresh extends Thread{
 	public Applet4 myapplet;
 	boolean horizontalposi = true;
     boolean verticalposi = true;
-	//public int velocity = 10;
+	public int velocity = 1;
 	public void run(){
 		while(true){
 		myapplet.repaint();
 		try {
 			//sleep(200);
 			sleep(15);
-				//int num1;		num1 = (int) (Math.random() * 10);
-				//int num11;		num11 = (int) (Math.random() * -10);
-				//int num2;		num2 = (int) (Math.random() * 10);
-				//int num22;		num22 = (int) (Math.random() * -10);
-				//int num3;		num3 = (int) (Math.random() * 10);
-				//int num33;		num33 = (int) (Math.random() * -10);
-				//int num4;		num4 = (int) (Math.random() * 10);
-				//int num44;		num44 = (int) (Math.random() * -10);
 				if (myapplet.rect1.x <=20){
 					horizontalposi = true;
 				}
@@ -120,14 +104,6 @@ public class refresh extends Thread{
 				} else {
 					myapplet.rect1.y = myapplet.rect1.y -1;					
 				}
-				//myapplet.rect1.x = myapplet.rect1.x +num1;
-				//myapplet.rect1.x = myapplet.rect1.x +num11;
-				//myapplet.rect1.y = myapplet.rect1.y +num2;
-				//myapplet.rect1.y = myapplet.rect1.y +num22;
-				//myapplet.rect2.x = myapplet.rect2.x +num3;
-				//myapplet.rect2.x = myapplet.rect2.x +num33;
-				//myapplet.rect2.y = myapplet.rect2.y +num4;
-				//myapplet.rect2.y = myapplet.rect2.y +num44;
 				
 			} catch (InterruptedException e){
 				e.printStackTrace();
