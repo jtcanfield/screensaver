@@ -86,7 +86,10 @@ public class refresh extends Thread{
 		while(true){
 		myapplet.repaint();
 		try {
-			sleep(200);
+			//sleep(200);
+			sleep(10);
+			int numX = (int) (1);
+			int numY = (int) (1);
 				//int num1;		num1 = (int) (Math.random() * 10);
 				//int num11;		num11 = (int) (Math.random() * -10);
 				//int num2;		num2 = (int) (Math.random() * 10);
@@ -95,22 +98,20 @@ public class refresh extends Thread{
 				//int num33;		num33 = (int) (Math.random() * -10);
 				//int num4;		num4 = (int) (Math.random() * 10);
 				//int num44;		num44 = (int) (Math.random() * -10);
-				if (myapplet.rect1.x + myapplet.rect1.width <=620){
-					int num1;		num1 = (int) (Math.random() * 10);
-					myapplet.rect1.x = myapplet.rect1.x +num1;
+				if (myapplet.rect1.x + myapplet.rect1.width <=20){
+					numX = 1;
 				}
-				if (myapplet.rect1.x + myapplet.rect1.width >=620){	
-					int num1;		num1 = (int) (Math.random() * -10);
-					myapplet.rect1.x = myapplet.rect1.x +num1;
+				if (myapplet.rect1.x + myapplet.rect1.width >=1320){	
+					numX = -1;
 				}
-				if (myapplet.rect1.y + myapplet.rect1.width <=620){
-					int num2;		num2 = (int) (Math.random() * 10);
-					myapplet.rect1.y = myapplet.rect1.y +num2;
+				if (myapplet.rect1.y + myapplet.rect1.width <=20){
+					numY = 1;
 				}
 				if (myapplet.rect1.y + myapplet.rect1.width >=620){	
-					int num2;		num2 = (int) (Math.random() * -10);
-					myapplet.rect1.y = myapplet.rect1.y +num2;
+					numY = -50;
 				}
+				myapplet.rect1.x = myapplet.rect1.x +numX;
+				myapplet.rect1.y = myapplet.rect1.y +numY;
 				//myapplet.rect1.x = myapplet.rect1.x +num1;
 				//myapplet.rect1.x = myapplet.rect1.x +num11;
 				//myapplet.rect1.y = myapplet.rect1.y +num2;
