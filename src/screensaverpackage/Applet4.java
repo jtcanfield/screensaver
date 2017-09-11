@@ -33,7 +33,7 @@ public class Applet4 extends Applet1 {
 		rect1.height = 100;
 		
 		rect2 = new Rectangle();
-		rect2.x = 0;
+		rect2.x = 10;
 		rect2.y = 0;
 		rect2.width = 10;
 		rect2.height = 10;
@@ -41,8 +41,8 @@ public class Applet4 extends Applet1 {
 		rect3 = new Rectangle();
 		rect3.x = 0;
 		rect3.y = 0;
-		rect3.width = 50;
-		rect3.height = 50;
+		rect3.width = 10;
+		rect3.height = 10;
 		
 		refresh thread= new refresh();	
 		thread.myapplet = this;
@@ -60,7 +60,7 @@ public void paint(Graphics g){
 	colors[6]=Color.pink;
 	colors[7]=Color.red;
 	colors[8]=Color.yellow;
-	int i = r.nextInt(8);
+	//int i = r.nextInt(8);
 	//g.setColor(colors[i]);
 	//rect2Color=colors[i]; //stops color for being random
 	
@@ -80,7 +80,8 @@ public void paint(Graphics g){
 }
 public class refresh extends Thread{
 	public Applet4 myapplet;
-	
+	boolean horizontalposi = true;
+    boolean verticalposi = true;
 	//public int velocity = 10;
 	public void run(){
 		while(true){
@@ -88,8 +89,6 @@ public class refresh extends Thread{
 		try {
 			//sleep(200);
 			sleep(10);
-			int numX = (int) (1);
-			int numY = (int) (1);
 				//int num1;		num1 = (int) (Math.random() * 10);
 				//int num11;		num11 = (int) (Math.random() * -10);
 				//int num2;		num2 = (int) (Math.random() * 10);
@@ -98,20 +97,28 @@ public class refresh extends Thread{
 				//int num33;		num33 = (int) (Math.random() * -10);
 				//int num4;		num4 = (int) (Math.random() * 10);
 				//int num44;		num44 = (int) (Math.random() * -10);
-				if (myapplet.rect1.x + myapplet.rect1.width <=20){
-					numX = 1;
+				if (myapplet.rect1.x <=20){
+					horizontalposi = true;
 				}
-				if (myapplet.rect1.x + myapplet.rect1.width >=1320){	
-					numX = -1;
+				if (myapplet.rect1.x + myapplet.rect1.width >=1340){
+					horizontalposi = false;
 				}
-				if (myapplet.rect1.y + myapplet.rect1.width <=20){
-					numY = 1;
+				if (myapplet.rect1.y <=20){
+					verticalposi = true;
 				}
-				if (myapplet.rect1.y + myapplet.rect1.width >=620){	
-					numY = -50;
+				if (myapplet.rect1.y + myapplet.rect1.width >=640){	
+					verticalposi = false;
 				}
-				myapplet.rect1.x = myapplet.rect1.x +numX;
-				myapplet.rect1.y = myapplet.rect1.y +numY;
+				if (horizontalposi == true){
+					myapplet.rect1.x = myapplet.rect1.x +1;
+				} else {
+					myapplet.rect1.x = myapplet.rect1.x -1;
+				}
+				if (verticalposi == true){
+					myapplet.rect1.y = myapplet.rect1.y +1;
+				} else {
+					myapplet.rect1.y = myapplet.rect1.y -1;					
+				}
 				//myapplet.rect1.x = myapplet.rect1.x +num1;
 				//myapplet.rect1.x = myapplet.rect1.x +num11;
 				//myapplet.rect1.y = myapplet.rect1.y +num2;
