@@ -63,9 +63,13 @@ public void paint(Graphics g){
 	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
 }
 public void animation(Graphics g){
-//	super.paint(g);    
-//	g.setColor(Color.red);
-//	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
+	try{
+//		e.draw(g);
+//		g.setColor(Color.red);
+//		g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
+//		super.paint(g);  
+	} catch (NullPointerException e){
+	}
 }
 public class refresh extends Thread{
 	public ScreenSaverAppletMain myapplet;
@@ -73,6 +77,8 @@ public class refresh extends Thread{
     boolean verticalposi = true;
 	public int velocity = 1;
 	public void run(){
+//		myapplet.repaint();
+//		animation(myapplet.getGraphics());
 		Shape abc=new Shape();
 		System.out.print(abc);
 //		System.out.print(myapplet.rect1);
