@@ -25,7 +25,7 @@ public class ScreenSaverAppletMain extends JFrame  {
 //	public Rectangle rect2;
 	public ScreenSaverAppletMain(){
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(1360, 660);
+        setSize(1360, 720);
 		rect1 = new Rectangle();
 		rect1.x = 100;
 		rect1.y = 100;
@@ -88,10 +88,10 @@ public class refresh extends Thread{
 				if (myapplet.rect1.x + myapplet.rect1.width >=1340){
 					horizontalposi = false;
 				}
-				if (myapplet.rect1.y <=20){
+				if (myapplet.rect1.y <=40){
 					verticalposi = true;
 				}
-				if (myapplet.rect1.y + myapplet.rect1.width >=640){	
+				if (myapplet.rect1.y + myapplet.rect1.width >=700){	
 					verticalposi = false;
 				}
 				if (horizontalposi == true){

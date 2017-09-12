@@ -12,8 +12,8 @@ public class background extends Applet {
 	}
 	public void draw(Graphics g) {
 		g.setColor(Color.blue);
-		g.fillRect(0,0,1360,660);
+		g.fillRect(0,0,1360,720);
 		g.setColor(Color.white);
-		g.fillRect(20,20,1320,620);
+		g.fillRect(20,40,1320,660);
     }
 }
