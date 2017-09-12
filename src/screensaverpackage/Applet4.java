@@ -10,8 +10,10 @@ import java.awt.MouseInfo;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.util.Random;
+import java.util.TimerTask;
+import javax.swing.Timer;
 
-public class Applet4 extends Applet {
+public class Applet4 extends background {
 	public Rectangle rect1;
 //	public Rectangle rect2;
 	public Applet4(){
@@ -32,10 +34,12 @@ public class Applet4 extends Applet {
 		thread.start();
 	}
 public void animation(Graphics g){
-	super.paint(g);    
-	g.setColor(Color.red);
-	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
+//	super.paint(g);    
+//	g.setColor(Color.red);
+//	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
 }
+background e=new background();
+
 public void paint(Graphics g){
 //	Random r = new Random();
 //	Color [] colors = new Color[9];
@@ -48,11 +52,11 @@ public void paint(Graphics g){
 //	colors[6]=Color.pink;
 //	colors[7]=Color.red;
 //	colors[8]=Color.yellow;
-	
-	g.setColor(Color.blue);
-	g.fillRect(0,0,1360,660);
-	g.setColor(Color.white);
-	g.fillRect(20,20,1320,620);
+	e.draw(g);
+//	g.setColor(Color.blue);
+//	g.fillRect(0,0,1360,660);
+//	g.setColor(Color.white);
+//	g.fillRect(20,20,1320,620);
 //	private BufferedImage bf;
 //    bf = new BufferedImage( rect1.width,rect1.height, BufferedImage.TYPE_INT_RGB);
 	g.setColor(Color.red);
@@ -63,32 +67,9 @@ public void paint(Graphics g){
 //	g.fillRect(rect2.x,rect2.y,rect2.width,rect2.height);
 //	rect2Color=colors[i]; //stops color for being random
 }
-public void update(Graphics g){
-    paint(g);
-}
 
 
-//			private BufferedImage bf;
-//			public void update(Graphics g){
-//			    paint(g);
-//			}
-//			
-//			public void paintt(Graphics g){
-//			
-//			 bf = new BufferedImage( this.getWidth(),this.getHeight(), BufferedImage.TYPE_INT_RGB);
-//			
-//			try{
-//			animation(bf.getGraphics());
-//			g.drawImage(bf,0,0,null);
-//			}catch(Exception ex){
-//			
-//			}
-//			}
-//			
-//			public void animation(Graphics g) {
-//			 super.paint(g);
-//			 g.drawImage(rect1, 1, 1, this);
-//			}
+
 public class refresh extends Thread{
 	public Applet4 myapplet;
 	boolean horizontalposi = true;
@@ -97,10 +78,9 @@ public class refresh extends Thread{
 	public void run(){
 		while(true){
 		myapplet.repaint();
-//		animation(myapplet.getGraphics());
+		animation(myapplet.getGraphics());
 		try {
-			//sleep(200);
-			sleep(15);
+			sleep(2);
 			
 				if (myapplet.rect1.x <=20){
 					horizontalposi = true;
@@ -115,14 +95,14 @@ public class refresh extends Thread{
 					verticalposi = false;
 				}
 				if (horizontalposi == true){
-					myapplet.rect1.x = myapplet.rect1.x +1;
+					myapplet.rect1.x = myapplet.rect1.x +velocity;
 				} else {
-					myapplet.rect1.x = myapplet.rect1.x -1;
+					myapplet.rect1.x = myapplet.rect1.x -velocity;
 				}
 				if (verticalposi == true){
-					myapplet.rect1.y = myapplet.rect1.y +1;
+					myapplet.rect1.y = myapplet.rect1.y +velocity;
 				} else {
-					myapplet.rect1.y = myapplet.rect1.y -1;					
+					myapplet.rect1.y = myapplet.rect1.y -velocity;					
 				}
 				
 			} catch (InterruptedException e){
