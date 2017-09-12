@@ -4,7 +4,9 @@ package screensaverpackage;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Rectangle;
-//import java.applet.Applet;
+import java.applet.Applet;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 //import java.awt.Cursor;
 //import java.awt.Event;
 //import java.awt.MouseInfo;
@@ -14,33 +16,33 @@ import java.awt.Rectangle;
 //import javax.swing.Timer;
 
 @SuppressWarnings("serial")
-public class ScreenSaverAppletMain extends background {
+public class ScreenSaverAppletMain extends JFrame  {
+	    public static void main(String[] args) {
+	    	ScreenSaverAppletMain app = new ScreenSaverAppletMain();
+	        app.setVisible(true);
+	    }
 	public Rectangle rect1;
 //	public Rectangle rect2;
 	public ScreenSaverAppletMain(){
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setSize(1360, 660);
 		rect1 = new Rectangle();
 		rect1.x = 100;
 		rect1.y = 100;
 		rect1.width = 100;
 		rect1.height = 100;
-		
 //		rect2 = new Rectangle();
 //		rect2.x = 0;
 //		rect2.y = 0;
 //		rect2.width = 10;
 //		rect2.height = 10;
-		
 		refresh thread= new refresh();	
 		thread.myapplet = this;
 		thread.start();
 	}
 	background e=new background();
-public void animation(Graphics g){
-//	super.paint(g);    
-//	g.setColor(Color.red);
-//	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
-}
 public void paint(Graphics g){
+//	super.paint(g);
 //	Random r = new Random();
 //	Color [] colors = new Color[9];
 //	colors[0]=Color.black;
@@ -59,6 +61,11 @@ public void paint(Graphics g){
 	e.draw(g);
 	g.setColor(Color.red);
 	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
+}
+public void animation(Graphics g){
+//	super.paint(g);    
+//	g.setColor(Color.red);
+//	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
 }
 public class refresh extends Thread{
 	public ScreenSaverAppletMain myapplet;
