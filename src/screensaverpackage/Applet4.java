@@ -1,13 +1,13 @@
 package screensaverpackage;
 
 
-import java.applet.Applet;
-import java.awt.Cursor;
+//import java.applet.Applet;
 import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Rectangle;
+import java.awt.Cursor;
 import java.awt.Event;
 import java.awt.MouseInfo;
-import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 import java.util.TimerTask;
@@ -33,13 +33,12 @@ public class Applet4 extends background {
 		thread.myapplet = this;
 		thread.start();
 	}
+	background e=new background();
 public void animation(Graphics g){
 //	super.paint(g);    
 //	g.setColor(Color.red);
 //	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
 }
-background e=new background();
-
 public void paint(Graphics g){
 //	Random r = new Random();
 //	Color [] colors = new Color[9];
@@ -52,30 +51,23 @@ public void paint(Graphics g){
 //	colors[6]=Color.pink;
 //	colors[7]=Color.red;
 //	colors[8]=Color.yellow;
-	e.draw(g);
-//	g.setColor(Color.blue);
-//	g.fillRect(0,0,1360,660);
-//	g.setColor(Color.white);
-//	g.fillRect(20,20,1320,620);
-//	private BufferedImage bf;
-//    bf = new BufferedImage( rect1.width,rect1.height, BufferedImage.TYPE_INT_RGB);
-	g.setColor(Color.red);
-	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
-	
 //	int i1 = r.nextInt(8);
 //	g.setColor(colors[i1]);
 //	g.fillRect(rect2.x,rect2.y,rect2.width,rect2.height);
 //	rect2Color=colors[i]; //stops color for being random
+	e.draw(g);
+	g.setColor(Color.red);
+	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
 }
-
-
-
 public class refresh extends Thread{
 	public Applet4 myapplet;
 	boolean horizontalposi = true;
     boolean verticalposi = true;
 	public int velocity = 1;
 	public void run(){
+		Shape abc=new Shape();
+		System.out.print(abc);
+//		System.out.print(myapplet.rect1);
 		while(true){
 		myapplet.repaint();
 		animation(myapplet.getGraphics());

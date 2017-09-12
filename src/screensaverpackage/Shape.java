@@ -3,9 +3,7 @@ package screensaverpackage;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.applet.Applet;
-import java.awt.Rectangle;
-import java.util.Random;
+
 public class Shape {
 	public int x;
 	public int y;
