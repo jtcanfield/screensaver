@@ -1,22 +1,23 @@
 package screensaverpackage;
 
 
-//import java.applet.Applet;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Rectangle;
-import java.awt.Cursor;
-import java.awt.Event;
-import java.awt.MouseInfo;
-import java.awt.image.BufferedImage;
-import java.util.Random;
-import java.util.TimerTask;
-import javax.swing.Timer;
+//import java.applet.Applet;
+//import java.awt.Cursor;
+//import java.awt.Event;
+//import java.awt.MouseInfo;
+//import java.awt.image.BufferedImage;
+//import java.util.Random;
+//import java.util.TimerTask;
+//import javax.swing.Timer;
 
-public class Applet4 extends background {
+@SuppressWarnings("serial")
+public class ScreenSaverAppletMain extends background {
 	public Rectangle rect1;
 //	public Rectangle rect2;
-	public Applet4(){
+	public ScreenSaverAppletMain(){
 		rect1 = new Rectangle();
 		rect1.x = 100;
 		rect1.y = 100;
@@ -60,7 +61,7 @@ public void paint(Graphics g){
 	g.fillRect(rect1.x,rect1.y,rect1.width,rect1.height);
 }
 public class refresh extends Thread{
-	public Applet4 myapplet;
+	public ScreenSaverAppletMain myapplet;
 	boolean horizontalposi = true;
     boolean verticalposi = true;
 	public int velocity = 1;

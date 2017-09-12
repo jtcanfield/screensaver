@@ -5,6 +5,7 @@ import java.applet.Applet;
 import java.awt.Graphics;
 import java.awt.Color;
 
+@SuppressWarnings("serial")
 public class background extends Applet {
 	public background(){
 		
